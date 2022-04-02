@@ -1,0 +1,109 @@
+.sign-up-page-top-most-container-div{
+    height: 100vh;
+    width: 100vw;
+    background-color: #BBEBC5;
+    display: flex;
+    justify-content: center;
+}
+
+.sign-up-page-parent-container-div{
+    display: flex;
+    width: 50%;
+    align-items: center;
+}
+
+.sign-up-page-blue-sapling-logo{
+    height: 100px;
+    width: 300px;
+}
+
+.sign-up-page-email-input-field-input-group-container {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.sign-up-page-email-input-field-icon {
+    background-color: white;
+    border: none;
+}
+
+.sign-up-page-email-input-field {
+    border: none;
+}
+
+.sign-up-page-password-input-field-input-group-container {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.sign-up-page-password-input-field-icon{
+    background-color: white;
+    border: none;
+}
+
+.sign-up-page-password-input-field{
+    border: none;
+}
+
+.sign-up-page-joining-date-input-field-input-group-container{
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.sign-up-page-joining-date-input-field-icon{
+    background-color: white;
+    border: none;
+}
+
+.sign-up-page-top-most-container-div
+{
+    color: #626161;
+}
+
+.sign-up-page-sign-in-button-parent-container {
+    display: flex;
+    justify-content: center;
+}
+
+.sign-up-page-sign-in-button {
+    background-color: white;
+    padding: 0.6rem;
+    border-radius: 30px;
+    border: none;
+    width: 45%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.sign-up-page-sign-in-button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25),
+        0 2px 4px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+    /* THIS IS TO DISABLE TEXT SELECTION WHEN CLICKING ON BUTTON */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+}
+
+.sign-up-page-sign-up-message {
+    font-weight: 500;
+    color: white;
+}
+
+.sign-up-page-sign-up-hyperlink {
+    font-weight: 900;
+    color: #626161;
+    margin-left: 0.2rem;
+}
+
+.sign-up-page-sing-up-link-tag {
+    text-decoration: none;
+}

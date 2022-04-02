@@ -1,0 +1,7 @@
+.toast-notification-styling {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 13px;
+    z-index: 3;
+}
