@@ -3,6 +3,8 @@ import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
+import { setCookieStorage } from '../helper/cookieStorageHelper';
+
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -10,10 +12,12 @@ import axios from 'axios';
 import '../css/Login.css';
 import logo from '../static/bs-logo.svg';
 
-const Login = () => {
+const Login = (props) => {
 	const [isLoading, setIsLoading] = useState(false);
-	const [userLoginEmail, setUserLoginEmail] = useState();
-	const [userLoginPassword, setUserLoginPassword] = useState();
+	const [userLoginEmail, setUserLoginEmail] = useState('');
+	const [userLoginPassword, setUserLoginPassword] = useState('');
+
+	const { handleToastNotification } = props;
 
 	const loginUser = () => {
 		setIsLoading(true);
@@ -24,11 +28,22 @@ const Login = () => {
 					password: userLoginPassword,
 				})
 				.then((response) => {
-					console.log('======> RESPONSE', response);
+					console.log('=======> login response', response);
+					console.log('=======> login asdasd', response?.headers['auth-token']);
+					setCookieStorage('auth-token', response?.headers['auth-token'], 15);
+					handleToastNotification({
+						type: 'success',
+						message: response?.data,
+					});
 					setIsLoading(false);
 				})
-				.catch((err) => {
-					console.log('======> ERRORS', err);
+				.catch((error) => {
+					const { log_in_validation_errors: errorMessage } =
+						error?.response?.data;
+					handleToastNotification({
+						type: 'error',
+						message: errorMessage,
+					});
 					setIsLoading(false);
 				});
 		}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Toast from 'react-bootstrap/Toast';
 
 import '../css/ToastNotification.css';

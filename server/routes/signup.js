@@ -1,12 +1,16 @@
 const router = require('express').Router();
 const User = require('../models/user.js');
+const bcrypt = require('bcryptjs');
 
 const validationSchemaForSignUpUser = require('../validations/signUpUser');
 
 router.post('/', async (req, res) => {
+	const salt = await bcrypt.genSalt(10);
+	const hashPassword = await bcrypt.hash(req.body.password, salt);
+
 	const IncomingUserRequest = {
 		email: req.body.email,
-		password: req.body.password,
+		password: hashPassword,
 		joining_date: req.body.joining_date,
 		sick_leaves_taken_in_current_year: parseInt(
 			req.body.sick_leaves_taken_in_current_year

@@ -7,6 +7,7 @@ const dotenv = require('dotenv');
 // IMPORT FILES
 const loginRoute = require('./routes/login');
 const signUpRoute = require('./routes/signup');
+const homePage = require('./routes/homePage');
 
 // SETUP
 const app = express();
@@ -14,6 +15,7 @@ const PORT = process.env.PORT || 5000;
 dotenv.config();
 const corsOptions = {
 	origin: '*',
+	exposedHeaders: 'auth-token',
 	credentials: true, //access-control-allow-credentials:true
 	optionSuccessStatus: 200,
 };
@@ -34,6 +36,7 @@ app.use(express.json());
 // ROUTES
 app.use('/login', loginRoute);
 app.use('/signup', signUpRoute);
+app.use('/', homePage);
 
 // SERVER LISTENER
 app.listen(PORT, () => {
