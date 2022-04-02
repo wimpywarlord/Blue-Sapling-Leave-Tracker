@@ -7,6 +7,7 @@ import './css/App.css';
 
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Home from './components/Home';
 import ToastNotification from './components/ToastNotification';
 
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
 				closeToastNotification={closeToastNotification}></ToastNotification>
 			<BrowserRouter>
 				<Routes>
+					<Route path='/' element={<Home />} />
 					<Route
 						path='/login'
 						element={

@@ -16,7 +16,7 @@ export const getCookieStorage = (cookieName) => {
 
 export const setCookieStorage = (cookieName, cookieValue, expiryMins) => {
 	const d = new Date();
-	d.setTime(d.getTime() + expiryMins * 60 * 60 * 1000);
+	d.setTime(d.getTime() + expiryMins * 60 * 1000);
 	let expires = 'expires=' + d.toUTCString();
 	document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';path=/';
 };
