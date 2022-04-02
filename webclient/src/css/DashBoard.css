@@ -1,0 +1,7 @@
+.dash-board-top-most-container-div {
+    z-index: 2;
+    width: 95vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+}
