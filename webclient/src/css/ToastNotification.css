@@ -5,3 +5,43 @@
     margin: 13px;
     z-index: 3;
 }
+
+.toast-notification-message-styling-error{
+    border-radius: 50%;
+    background-color: red;
+    height: 9px;
+    width: 9px;
+    margin-right: 7px;
+}
+
+.toast-notification-message-styling-success {
+    border-radius: 50%;
+    background-color: rgb(0, 255, 0);
+    height:9px;
+    width:9px;
+    margin-right: 7px;
+}
+
+.toast-notification-message-styling-warning {
+    border-radius: 50%;
+    background-color: orange;
+    height:9px;
+    width:9px;
+    margin-right: 7px;
+}
+
+.toast-notification-message-styling-info {
+    border-radius: 50%;
+    background-color: rgb(0, 145, 255);
+    height:9px;
+    width:9px;
+    margin-right: 7px;
+}
+
+.toast-notification-message-styling-backup {
+    border-radius: 50%;
+    background-color: rgb(114, 114, 114);
+    height: 9px;
+    width: 9px;
+    margin-right: 7px;
+}

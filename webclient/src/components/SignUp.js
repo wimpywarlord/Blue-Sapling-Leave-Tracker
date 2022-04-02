@@ -7,12 +7,13 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import '../css/SignUp.css';
 import logo from '../static/bs-logo.svg';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const SignUp = (props) => {
-	var currentTime = new Date();
-	var currentYear = currentTime.getFullYear();
+	const currentTime = new Date();
+	const currentYear = currentTime.getFullYear();
+	const navigate = useNavigate();
 
 	const { handleToastNotification } = props;
 
@@ -37,12 +38,20 @@ const SignUp = (props) => {
 					optional_leaves_taken_in_current_year: userOptionalLeaves,
 				})
 				.then((response) => {
-					console.log('======> RESPONSE', response);
+					handleToastNotification({
+						type: 'success',
+						message: response?.data,
+					});
 					setIsLoading(false);
+					navigate('/login');
 				})
-				.catch((err) => {
-					console.log('======> ERRORS', err);
-					handleToastNotification({ type: 'error', message: err });
+				.catch((error) => {
+					const { sign_up_validation_errors: errorMessage } =
+						error?.response?.data;
+					handleToastNotification({
+						type: 'error',
+						message: errorMessage,
+					});
 					setIsLoading(false);
 				});
 		}

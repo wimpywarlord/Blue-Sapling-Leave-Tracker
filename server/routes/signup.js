@@ -1,22 +1,7 @@
 const router = require('express').Router();
 const User = require('../models/user.js');
 
-// VALIDATION
-const Joi = require('joi');
-
-const validationSchemaForSignUpUser = Joi.object({
-	email: Joi.string()
-		.pattern(/^[A-Za-z0-9._%+-]+@bluesapling.com$/)
-		.required()
-		.email()
-		.max(255)
-		.min(5),
-	password: Joi.string().required().min(6).max(255),
-	joining_date: Joi.string().required(),
-	sick_leaves_taken_in_current_year: Joi.number().integer().min(0).max(12),
-	casual_leaves_taken_in_current_year: Joi.number().integer().min(0).max(12),
-	optional_leaves_taken_in_current_year: Joi.number().integer().min(0).max(12),
-});
+const validationSchemaForSignUpUser = require('../validations/signUpUser');
 
 router.post('/', async (req, res) => {
 	const IncomingUserRequest = {
@@ -35,29 +20,34 @@ router.post('/', async (req, res) => {
 	};
 
 	const { error } = validationSchemaForSignUpUser.validate(IncomingUserRequest);
-	console.log('======> request', req.body);
-	console.log('======> error in JOI validation', error);
 
-	if (!error) {
-		try {
-			const NewUser = new User(IncomingUserRequest);
-			const savedUser = await NewUser.save();
-			if (savedUser) {
-				res.send('User Saved in Database Successfully');
-				console.log('====> User Created Successfully');
-			} else {
-				res
-					.status(504)
-					.send({ sign_up_validation_errors: 'User Not Saved, Try Again' });
-				console.log('====> User Created Successfully');
+	const userAlreadyExist = await User.findOne({ email: req.body.email });
+
+	if (!userAlreadyExist) {
+		if (!error) {
+			try {
+				const NewUser = new User(IncomingUserRequest);
+				const savedUser = await NewUser.save();
+				if (savedUser) {
+					res.status(200).send('User Saved in Database Successfully');
+				} else {
+					res
+						.status(504)
+						.send({ sign_up_validation_errors: 'User Not Saved, Try Again' });
+				}
+			} catch (err) {
+				// TODO: CHECK THIS SCENARIO BY USING WRONG MONGO KEY
+				res.status(400).send({
+					sign_up_validation_errors: 'Some error Occurred, Please try again.',
+				});
 			}
-		} catch (err) {
-			res.status(400).end(err);
+		} else {
+			res
+				.status(400)
+				.send({ sign_up_validation_errors: error.details[0].message });
 		}
 	} else {
-		res
-			.status(400)
-			.send({ sign_up_validation_errors: error.details[0].message });
+		res.status(400).send({ sign_up_validation_errors: 'User already exists.' });
 	}
 });
 

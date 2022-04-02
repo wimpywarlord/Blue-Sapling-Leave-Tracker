@@ -15,16 +15,29 @@ const App = () => {
 	const [showToastNotification, setShowToastNotification] = useState(false);
 
 	const handleToastNotification = (responseInfo) => {
-		setNotificationMessage(responseInfo?.type);
-		setNotificationMessageType(responseInfo?.message);
-		setShowToastNotification(true);
+		if (!showToastNotification) {
+			setNotificationMessage(responseInfo?.message);
+			setNotificationMessageType(responseInfo?.type);
+			setShowToastNotification(true);
+			setTimeout(() => {
+				setShowToastNotification(false);
+			}, 3000);
+		}
+	};
+
+	const closeToastNotification = () => {
+		setNotificationMessage('');
+		setNotificationMessageType('');
+		setShowToastNotification(false);
 	};
 
 	return (
 		<div>
 			<ToastNotification
 				notificationMessage={notificationMessage}
-				notificationMessageType={notificationMessageType}></ToastNotification>
+				notificationMessageType={notificationMessageType}
+				showToastNotification={showToastNotification}
+				closeToastNotification={closeToastNotification}></ToastNotification>
 			<BrowserRouter>
 				<Routes>
 					<Route path='/login' element={<Login />} />
@@ -34,8 +47,6 @@ const App = () => {
 							<SignUp handleToastNotification={handleToastNotification} />
 						}
 					/>
-					{/* <Route path='expenses' element={<Expenses />} />
-				<Route path='invoices' element={<Invoices />} /> */}
 				</Routes>
 			</BrowserRouter>
 		</div>

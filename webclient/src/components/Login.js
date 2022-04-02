@@ -12,17 +12,26 @@ import logo from '../static/bs-logo.svg';
 
 const Login = () => {
 	const [isLoading, setIsLoading] = useState(false);
+	const [userLoginEmail, setUserLoginEmail] = useState();
+	const [userLoginPassword, setUserLoginPassword] = useState();
+
 	const loginUser = () => {
-		console.log('============>');
 		setIsLoading(true);
-		axios
-			.post('http://localhost:5000/login')
-			.then((response) => {
-				console.log('======> RESPONSE', response);
-			})
-			.catch((err) => {
-				console.log('======> ERRORS', err);
-			});
+		if (!isLoading) {
+			axios
+				.post('http://localhost:5000/login', {
+					email: userLoginEmail,
+					password: userLoginPassword,
+				})
+				.then((response) => {
+					console.log('======> RESPONSE', response);
+					setIsLoading(false);
+				})
+				.catch((err) => {
+					console.log('======> ERRORS', err);
+					setIsLoading(false);
+				});
+		}
 	};
 
 	return (
@@ -51,6 +60,10 @@ const Login = () => {
 									type='email'
 									className='login-page-email-input-field'
 									placeholder='Email'
+									value={userLoginEmail}
+									onChange={(event) => {
+										setUserLoginEmail(event.target.value);
+									}}
 								/>
 							</InputGroup>
 							<InputGroup className='mb-3 login-page-password-input-field-input-group-container'>
@@ -66,16 +79,20 @@ const Login = () => {
 									className='login-page-password-input-field'
 									type='password'
 									placeholder='Password'
+									value={userLoginPassword}
+									onChange={(event) => {
+										setUserLoginPassword(event.target.value);
+									}}
 								/>
 							</InputGroup>
+							<Row className='login-page-sign-in-button-parent-container'>
+								<div
+									className='login-page-sign-in-button make-things-center-x'
+									onClick={loginUser}>
+									<span>Log In</span>
+								</div>
+							</Row>
 						</Form>
-					</Row>
-					<Row className='login-page-sign-in-button-parent-container'>
-						<div
-							className='login-page-sign-in-button make-things-center-x'
-							onClick={loginUser}>
-							<span>Log In</span>
-						</div>
 					</Row>
 					<Row className='mt-4'>
 						<span className='login-page-sign-up-message make-things-center-x'>

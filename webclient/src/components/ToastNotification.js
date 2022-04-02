@@ -1,35 +1,72 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Toast from 'react-bootstrap/Toast';
 
 import '../css/ToastNotification.css';
 
-const ToastNotification = (props) => {
-	const { notificationMessageType, notificationMessage } = props;
+import { userFriendlyToastMessageConverter } from '../helper/NotificationHelper';
 
-	const toastMessageStylingDecider = () => {
-		if ((notificationMessageType = 'success')) {
-			return '';
-		} else if ((notificationMessageType = 'error')) {
-			return '';
-		} else if ((notificationMessageType = 'warning')) {
-			return '';
-		} else if ((notificationMessageType = 'info')) {
-			return '';
+const ToastNotification = (props) => {
+	const {
+		notificationMessageType,
+		notificationMessage,
+		closeToastNotification,
+		showToastNotification,
+	} = props;
+
+	const toastMessageStylingDecider = (incomingNotificationMessageType) => {
+		if (incomingNotificationMessageType === 'success') {
+			return 'toast-notification-message-styling-success';
+		} else if (incomingNotificationMessageType === 'error') {
+			return 'toast-notification-message-styling-error';
+		} else if (incomingNotificationMessageType === 'warning') {
+			return 'toast-notification-message-styling-warning';
+		} else if (incomingNotificationMessageType === 'info') {
+			return 'toast-notification-message-styling-info';
 		} else {
 			return '';
 		}
 	};
 
+	const toastMessageTitleDecider = (incomingNotificationMessageType) => {
+		if (incomingNotificationMessageType === 'success') {
+			return 'Operation Successful';
+		} else if (incomingNotificationMessageType === 'error') {
+			return 'Error Occurred';
+		} else if (incomingNotificationMessageType === 'warning') {
+			return 'Warning Message';
+		} else if (incomingNotificationMessageType === 'info') {
+			return 'Information Message';
+		} else {
+			return '';
+		}
+	};
+
+	const userFriendlyMessage =
+		userFriendlyToastMessageConverter(notificationMessage);
+
 	return (
 		<span>
-			<Toast show={true} className='toast-notification-styling'>
+			<Toast
+				show={showToastNotification}
+				className='toast-notification-styling'
+				onClose={closeToastNotification}>
 				<Toast.Header>
-					{/* <img src='' className='rounded me-2' alt='' /> */}
-					<div>0</div>
-					<strong className='me-auto'>Bootstrap</strong>
-					<small>11 mins ago</small>
+					<div
+						className={
+							notificationMessageType
+								? toastMessageStylingDecider(notificationMessageType)
+								: 'toast-notification-message-styling-backup'
+						}></div>
+					<strong className='me-auto'>
+						{notificationMessageType
+							? toastMessageTitleDecider(notificationMessageType)
+							: 'Notification Message'}
+					</strong>
+					<small>1 second ago</small>
 				</Toast.Header>
-				<Toast.Body>{notificationMessage}</Toast.Body>
+				<Toast.Body>
+					{userFriendlyMessage ? userFriendlyMessage : notificationMessage}
+				</Toast.Body>
 			</Toast>
 		</span>
 	);
