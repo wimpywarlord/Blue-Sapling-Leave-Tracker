@@ -1,0 +1,22 @@
+.card-dash-board-element{
+    height: 37vh;
+    width: 30vh;
+    background-color: white;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 20px;
+}
+
+.dash-board-card-heading{
+    font-weight: 600;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.dash-board-card-figure{
+    font-size: 110px;
+}
+
+.dash-board-card-figure-parent-element{
+    height: 57%;
+}

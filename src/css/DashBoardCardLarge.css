@@ -1,0 +1,27 @@
+.card-large-dash-board-parent-element{
+    width: 32vw;
+    height: 37vh;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 20px;
+}
+
+.dash-board-card-large-heading{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.dash-board-card-large-figure{
+    font-size: 120px;
+}
+
+.dash-board-card-large-figure-parent-element{
+    height: 10.9rem !important;
+}
+
+.dash-board-card-large-footing{
+    font-size: 15px;
+    font-weight: 600;
+}

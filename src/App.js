@@ -41,7 +41,10 @@ const App = () => {
 				closeToastNotification={closeToastNotification}></ToastNotification>
 			<BrowserRouter>
 				<Routes>
-					<Route path='/' element={<Home />} />
+					<Route
+						path='/'
+						element={<Home handleToastNotification={handleToastNotification} />}
+					/>
 					<Route
 						path='/login'
 						element={

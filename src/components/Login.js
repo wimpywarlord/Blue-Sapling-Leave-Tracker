@@ -39,12 +39,19 @@ const Login = (props) => {
 					navigate('/');
 				})
 				.catch((error) => {
-					const { log_in_validation_errors: errorMessage } =
-						error?.response?.data;
-					handleToastNotification({
-						type: 'error',
-						message: errorMessage,
-					});
+					if (error?.response) {
+						const { log_in_validation_errors: errorMessage } =
+							error?.response?.data;
+						handleToastNotification({
+							type: 'error',
+							message: errorMessage,
+						});
+					} else {
+						handleToastNotification({
+							type: 'error',
+							message: 'Check your internet Connection.',
+						});
+					}
 					setIsLoading(false);
 				});
 		}

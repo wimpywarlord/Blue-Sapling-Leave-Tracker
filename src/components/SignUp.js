@@ -46,12 +46,19 @@ const SignUp = (props) => {
 					navigate('/login');
 				})
 				.catch((error) => {
-					const { sign_up_validation_errors: errorMessage } =
-						error?.response?.data;
-					handleToastNotification({
-						type: 'error',
-						message: errorMessage,
-					});
+					if (error?.response) {
+						const { sign_up_validation_errors: errorMessage } =
+							error?.response?.data;
+						handleToastNotification({
+							type: 'error',
+							message: errorMessage,
+						});
+					} else {
+						handleToastNotification({
+							type: 'error',
+							message: 'Check your Internet Connection.',
+						});
+					}
 					setIsLoading(false);
 				});
 		}

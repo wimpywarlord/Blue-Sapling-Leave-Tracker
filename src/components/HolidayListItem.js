@@ -9,7 +9,7 @@ import '../css/HolidayListItem.css';
 const HolidayListItem = (props) => {
 	const {
 		id,
-		nameOfTheHoliday,
+		nameOfTheHoliday = '',
 		dateOfTheHoliday,
 		dayOfTheHoliday,
 		remarkOfTheHoliday,
@@ -23,7 +23,7 @@ const HolidayListItem = (props) => {
 			<div className='holiday-list-item-individual-div-element my-3'>
 				<Row className='p-0 m-0'>
 					<Col className='m-0 p-0 make-things-center-x-and-y' xs={1}>
-						{nameOfTheHoliday.includes('*') ? (
+						{nameOfTheHoliday?.includes('*') ? (
 							<div className='holiday-list-item-type-of-holiday-mandatory'></div>
 						) : (
 							<div className='holiday-list-item-type-of-holiday-optional'></div>
