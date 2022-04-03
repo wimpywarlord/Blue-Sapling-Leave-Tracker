@@ -18,7 +18,6 @@ const HolidayListItem = (props) => {
 	const [show, setShow] = useState(false);
 	const target = useRef(null);
 
-	console.log('=========> remarkOfTheHoliday', remarkOfTheHoliday);
 	return (
 		<div className='make-things-center-x'>
 			<div className='holiday-list-item-individual-div-element my-3'>
