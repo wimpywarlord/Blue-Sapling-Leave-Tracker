@@ -44,6 +44,7 @@ const HolidayListItem = (props) => {
 							<div>
 								<img
 									ref={target}
+									alt='holiday-info-icon'
 									onMouseEnter={() => setShow(true)}
 									onMouseLeave={() => setShow(false)}
 									src='https://img.icons8.com/color/18/000000/info--v1.png'
