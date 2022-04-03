@@ -25,7 +25,7 @@ const Home = (props) => {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:5000/', {
+			.get('https://blue-sapling-leave-tracker-be.herokuapp.com/', {
 				headers: {
 					'auth-token': getCookieStorage('auth-token'),
 				},

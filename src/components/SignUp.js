@@ -29,7 +29,7 @@ const SignUp = (props) => {
 		setIsLoading(true);
 		if (!isLoading) {
 			axios
-				.post('http://localhost:5000/signup', {
+				.post('https://blue-sapling-leave-tracker-be.herokuapp.com/signup', {
 					email: userEmail,
 					password: userPassword,
 					joining_date: userJoiningDate,
