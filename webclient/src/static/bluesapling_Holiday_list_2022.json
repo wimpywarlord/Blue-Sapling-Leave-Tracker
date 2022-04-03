@@ -1,0 +1,301 @@
+{
+    "list_of_holidays": [
+        {
+            "id": 1,
+            "date_of_holiday": "1-Jan-22",
+            "day_of_holiday": "Saturday",
+            "name_of_holiday": "New Year's Day",
+            "remark": null
+        },
+        {
+            "id": 2,
+            "date_of_holiday": "9-Jan-22",
+            "day_of_holiday": "Sunday",
+            "name_of_holiday": "Guru Gobind Singh's Birthday",
+            "remark": null
+        },
+        {
+            "id": 3,
+            "date_of_holiday": "13-Jan-22",
+            "day_of_holiday": "Thursday",
+            "name_of_holiday": "Lohri",
+            "remark": null
+        },
+        {
+            "id": 4,
+            "date_of_holiday": "14-Jan-22",
+            "day_of_holiday": "Friday",
+            "name_of_holiday": "Makar Sankranti\/ Pongal",
+            "remark": null
+        },
+        {
+            "id": 5,
+            "date_of_holiday": "15-Jan-22",
+            "day_of_holiday": "Saturday",
+            "name_of_holiday": "Thiruvalluvar Day",
+            "remark": null
+        },
+        {
+            "id": 6,
+            "date_of_holiday": "23-Jan-22",
+            "day_of_holiday": "Sunday",
+            "name_of_holiday": "Netaji Subhash Chandra\nBose Janam Divas*",
+            "remark": "Applicable only in West Bengal"
+        },
+        {
+            "id": 7,
+            "date_of_holiday": "26-Jan-22",
+            "day_of_holiday": "Wednesday",
+            "name_of_holiday": "Republic Day*",
+            "remark": "Applicable for all states"
+        },
+        {
+            "id": 8,
+            "date_of_holiday": "5-Feb-22",
+            "day_of_holiday": "Saturday",
+            "name_of_holiday": "Basant Panchami",
+            "remark": null
+        },
+        {
+            "id": 9,
+            "date_of_holiday": "16-Feb-22",
+            "day_of_holiday": "Wednesday",
+            "name_of_holiday": "Guru Ravidas's Birthday",
+            "remark": null
+        },
+        {
+            "id": 10,
+            "date_of_holiday": "19-Feb-22",
+            "day_of_holiday": "Saturday",
+            "name_of_holiday": "Chhatrapati Shivaji Maharaj Jayanti",
+            "remark": null
+        },
+        {
+            "id": 11,
+            "date_of_holiday": "28-Feb-22",
+            "day_of_holiday": "Monday",
+            "name_of_holiday": "Maha Shivaratri",
+            "remark": null
+        },
+        {
+            "id": 12,
+            "date_of_holiday": "18-Mar-22",
+            "day_of_holiday": "Friday",
+            "name_of_holiday": "Holi",
+            "remark": null
+        },
+        {
+            "id": 13,
+            "date_of_holiday": "2-Apr-22",
+            "day_of_holiday": "Saturday",
+            "name_of_holiday": "Chandramana Ugadi \/ Gudi\nPadwa",
+            "remark": null
+        },
+        {
+            "id": 14,
+            "date_of_holiday": "10-Apr-22",
+            "day_of_holiday": "Sunday",
+            "name_of_holiday": "Sri Ram Navami",
+            "remark": null
+        },
+        {
+            "id": 15,
+            "date_of_holiday": "14-Apr-22",
+            "day_of_holiday": "Thursday",
+            "name_of_holiday": "Mahaveer Jayanti \/ Dr. Ambedkar Jayanti \/ Vaisakhi\n\/ Tamil New Year's Day",
+            "remark": null
+        },
+        {
+            "id": 16,
+            "date_of_holiday": "15-Apr-22",
+            "day_of_holiday": "Friday",
+            "name_of_holiday": "Good Friday",
+            "remark": null
+        },
+        {
+            "id": 17,
+            "date_of_holiday": "1-May-22",
+            "day_of_holiday": "Sunday",
+            "name_of_holiday": "Labour Day* \/ Maharashtra Day*",
+            "remark": "Not Applicable in Delhi, Chandigarh, Gujarat, Haryana, Punjab, Rajasthan, Uttar Pradesh, Uttarakhand, Himachal Pradesh,\nChhattisgarh, Jharkhand"
+        },
+        {
+            "id": 18,
+            "date_of_holiday": "4-May-22",
+            "day_of_holiday": "Wednesday",
+            "name_of_holiday": "Ramzan (ID-UL-FITR)",
+            "remark": null
+        },
+        {
+            "id": 19,
+            "date_of_holiday": "16-May-22",
+            "day_of_holiday": "Monday",
+            "name_of_holiday": "Buddha Poornima",
+            "remark": null
+        },
+        {
+            "id": 20,
+            "date_of_holiday": "2-Jun-22",
+            "day_of_holiday": "Thursday",
+            "name_of_holiday": "Telangana Formation Day*",
+            "remark": "Applicable only in\nTelangana"
+        },
+        {
+            "id": 21,
+            "date_of_holiday": "11-Jul-22",
+            "day_of_holiday": "Monday",
+            "name_of_holiday": "Id-ul-zuha (Bakrid)",
+            "remark": null
+        },
+        {
+            "id": 22,
+            "date_of_holiday": "30-Jul-22",
+            "day_of_holiday": "Saturday",
+            "name_of_holiday": "Muharram",
+            "remark": null
+        },
+        {
+            "id": 23,
+            "date_of_holiday": "11-Aug-22",
+            "day_of_holiday": "Thursday",
+            "name_of_holiday": "Raksha Bandhan",
+            "remark": null
+        },
+        {
+            "id": 24,
+            "date_of_holiday": "15-Aug-22",
+            "day_of_holiday": "Monday",
+            "name_of_holiday": "Independence Day*",
+            "remark": "Applicable for all states"
+        },
+        {
+            "id": 25,
+            "date_of_holiday": "16-Aug-22",
+            "day_of_holiday": "Tuesday",
+            "name_of_holiday": "Parsi New Year's Day",
+            "remark": null
+        },
+        {
+            "id": 26,
+            "date_of_holiday": "18-Aug-22",
+            "day_of_holiday": "Thursday",
+            "name_of_holiday": "Sri Krishna Janamashathmi",
+            "remark": null
+        },
+        {
+            "id": 27,
+            "date_of_holiday": "31-Aug-22",
+            "day_of_holiday": "Wednesday",
+            "name_of_holiday": "Ganesha Chathurthi",
+            "remark": null
+        },
+        {
+            "id": 28,
+            "date_of_holiday": "8-Sep-22",
+            "day_of_holiday": "Thursday",
+            "name_of_holiday": "Tiru Onam",
+            "remark": null
+        },
+        {
+            "id": 29,
+            "date_of_holiday": "2-Oct-22",
+            "day_of_holiday": "Sunday",
+            "name_of_holiday": "Mahathma Gandhi\nJayanti*",
+            "remark": "Applicable for all states"
+        },
+        {
+            "id": 30,
+            "date_of_holiday": "4-Oct-22",
+            "day_of_holiday": "Tuesday",
+            "name_of_holiday": "Mahanavami",
+            "remark": null
+        },
+        {
+            "id": 31,
+            "date_of_holiday": "5-Oct-22",
+            "day_of_holiday": "Wednesday",
+            "name_of_holiday": "Dussehra \/ Vijayadasami",
+            "remark": null
+        },
+        {
+            "id": 32,
+            "date_of_holiday": "8-Oct-22",
+            "day_of_holiday": "Saturday",
+            "name_of_holiday": "Id-Milad",
+            "remark": null
+        },
+        {
+            "id": 33,
+            "date_of_holiday": "24-Oct-22",
+            "day_of_holiday": "Monday",
+            "name_of_holiday": "Naraka Chathurdashi \/\nDeepavali \/ Kali Puja \/ Laxmi Pooja",
+            "remark": null
+        },
+        {
+            "id": 34,
+            "date_of_holiday": "26-Oct-22",
+            "day_of_holiday": "Wednesday",
+            "name_of_holiday": "Govardhan Pooja \/\nBalipadyami Deepavali \/ Bhai Duj",
+            "remark": null
+        },
+        {
+            "id": 35,
+            "date_of_holiday": "30-Oct-22",
+            "day_of_holiday": "Sunday",
+            "name_of_holiday": "Chhath Puja",
+            "remark": null
+        },
+        {
+            "id": 36,
+            "date_of_holiday": "1-Nov-22",
+            "day_of_holiday": "Tuesday",
+            "name_of_holiday": "Kannada Rajyotsava Day*",
+            "remark": "Applicable only in\nKarnataka"
+        },
+        {
+            "id": 37,
+            "date_of_holiday": "1-Nov-22",
+            "day_of_holiday": "Tuesday",
+            "name_of_holiday": "Haryana Day",
+            "remark": "Applicable only in Haryana"
+        },
+        {
+            "id": 38,
+            "date_of_holiday": "8-Nov-22",
+            "day_of_holiday": "Tuesday",
+            "name_of_holiday": "Gurunanak Jayanti \/ Kartik Poornima",
+            "remark": null
+        },
+        {
+            "id": 39,
+            "date_of_holiday": "19-Dec-22",
+            "day_of_holiday": "Monday",
+            "name_of_holiday": "Goa Liberation Day*",
+            "remark": "Applicable only in Goa"
+        },
+        {
+            "id": 40,
+            "date_of_holiday": "25-Dec-22",
+            "day_of_holiday": "Sunday",
+            "name_of_holiday": "Christmas",
+            "remark": null
+        }
+    ],
+    "note_about_holidays": [
+        {
+            "Notes:": "Notes"
+        },
+        {
+            "Notes:": "*: Denotes Mandatory holidays and remaining are Optional holidays."
+        },
+        {
+            "Notes:": "Karnataka, West Bengal, Goa, Telangana, and Andhra Pradesh: 5 Mandatory Holidays and 5 Optional."
+        },
+        {
+            "Notes:": "Assam, Tamil Nadu, Maharashtra, Kerala, Orissa, and Madhya Pradesh: 4 Mandatory Holidays and\n6 Optional Holidays."
+        },
+        {
+            "Notes:": "Delhi, Chandigarh, Gujarat, Haryana, Punjab, Rajasthan, Uttar Pradesh, Uttarakhand, Himachal Pradesh,\nChhattisgarh, Jharkhand, and Bihar: 3 Mandatory Holidays and 7 Optional Holidays."
+        }
+    ]
+}

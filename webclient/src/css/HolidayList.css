@@ -1,0 +1,46 @@
+.holiday-list-parent-container-div{
+    height: 67.7vh;
+    width: 50vh;
+    background-color: white;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+    /* border-radius: 20px; */
+}
+
+/* width */
+.holiday-list-parent-container-div::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+.holiday-list-parent-container-div::-webkit-scrollbar-track {
+    /* box-shadow: inset 0 0 5px grey; */
+    /* border-radius: 10px; */
+}
+
+/* Handle */
+.holiday-list-parent-container-div::-webkit-scrollbar-thumb {
+    background: #BBEBC5;
+    margin-right: 5px;
+    border-radius: 10px;
+}
+
+.holiday-list-optional-holiday-symbol-div{
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: red;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.holiday-list-mandatory-holiday-symbol-div {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: rgb(4, 255, 0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
