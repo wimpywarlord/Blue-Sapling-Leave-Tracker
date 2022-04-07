@@ -3,6 +3,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { BsInfoCircle } from "react-icons/bs";
+import { Tooltip, OverlayTrigger } from "react-bootstrap";
 
 import '../css/SignUp.css';
 import logo from '../static/bs-logo.svg';
@@ -141,72 +143,80 @@ const SignUp = (props) => {
 								/>
 							</InputGroup>
 							<Row>
-								<Col xs={4}>
-									<InputGroup className='mb-3 sign-up-page-joining-date-input-field-input-group-container'>
-										<InputGroup.Text
-											id='basic-addon1'
-											className='sign-up-page-joining-date-input-field-icon'>
-											<img
-												src='https://img.icons8.com/color/28/000000/doctor-giving-advice.png'
-												alt='sick-icon'
-											/>
-										</InputGroup.Text>
-										<Form.Control
-											className='sign-up-page-password-input-field'
-											type='number'
-											placeholder={`Sick Leaves in ${currentYear}`}
-											value={userSickLeaves}
-											onChange={(event) => {
-												setUserSickLeaves(event.target.value);
-											}}
-											name='sick_leaves_taken_in_current_year'
-										/>
-									</InputGroup>
-								</Col>
-								<Col xs={4}>
-									<InputGroup className='mb-3 sign-up-page-joining-date-input-field-input-group-container'>
-										<InputGroup.Text
-											id='basic-addon1'
-											className='sign-up-page-joining-date-input-field-icon'>
-											<img
-												src='https://img.icons8.com/color/28/000000/confetti.png'
-												alt='party-icon'
-											/>
-										</InputGroup.Text>
-										<Form.Control
-											className='sign-up-page-password-input-field'
-											type='number'
-											placeholder={`Casual Leaves in ${currentYear}`}
-											value={userCasualLeaves}
-											onChange={(event) => {
-												setUserCasualLeaves(event.target.value);
-											}}
-											name='casual_leaves_taken_in_current_year'
-										/>
-									</InputGroup>
-								</Col>
-								<Col xs={4}>
-									<InputGroup className='mb-3 sign-up-page-joining-date-input-field-input-group-container'>
-										<InputGroup.Text
-											id='basic-addon1'
-											className='sign-up-page-joining-date-input-field-icon'>
-											<img
-												src='https://img.icons8.com/color/28/000000/rgb-circle-1--v1.png'
-												alt='optional-icon'
-											/>
-										</InputGroup.Text>
-										<Form.Control
-											className='sign-up-page-password-input-field'
-											type='number'
-											placeholder={`Optional Leaves in ${currentYear}`}
-											value={userOptionalLeaves}
-											onChange={(event) => {
-												setUserOptionalLeaves(event.target.value);
-											}}
-											name='optional_leaves_taken_in_current_year'
-										/>
-									</InputGroup>
-								</Col>
+								{[
+					{
+						labelText: "Sick Leaves",
+						total: 12,
+						leaves: userSickLeaves,
+						setLeaves: setUserSickLeaves,
+						iconSrc:
+						"https://img.icons8.com/color/28/000000/doctor-giving-advice.png",
+					},
+					{
+						labelText: "Casual Leaves",
+						total: 8,
+						leaves: userCasualLeaves,
+						setLeaves: setUserCasualLeaves,
+						iconSrc:
+						"https://img.icons8.com/color/28/000000/confetti.png",
+					},
+					{
+						labelText: "Optional Leaves",
+						total: 5,
+						leaves: userOptionalLeaves,
+						setLeaves: setUserOptionalLeaves,
+						iconSrc:
+						"https://img.icons8.com/color/28/000000/rgb-circle-1--v1.png",
+					},
+					].map((col) => (
+					<Col xs={4} key={col.labelText}>
+						<label
+						className="sign-up-page-joining-date-label mb-1"
+						style={{ fontSize: ".74rem" }}
+						>
+						{`${col.labelText}`}
+						<OverlayTrigger
+							key="top"
+							placement="top"
+							overlay={
+							<Tooltip id={`tooltip-${col.labelText}`}>
+								<p>{`Enter Number of ${col.labelText} taken in ${currentYear}`}</p>
+								<p>
+								{`You receive total ${col.total} ${col.labelText} in a year`}
+								</p>
+							</Tooltip>
+							}
+						>
+							<span>
+							<BsInfoCircle
+								style={{
+								marginLeft: ".2rem",
+								marginBottom: ".2rem",
+								}}
+							/>
+							</span>
+						</OverlayTrigger>
+						</label>
+						<InputGroup className="mb-3 sign-up-page-joining-date-input-field-input-group-container">
+						<InputGroup.Text
+							id="basic-addon1"
+							className="sign-up-page-joining-date-input-field-icon"
+						>
+							<img src={col.iconSrc} alt="sick-icon" />
+						</InputGroup.Text>
+						<Form.Control
+							className="sign-up-page-password-input-field"
+							type="number"
+							value={col.leaves}
+							onChange={(event) => {
+							col.setLeaves(event.target.value);
+							}}
+							min="0"
+							// name="sick_leaves_taken_in_current_year"
+						/>
+						</InputGroup>
+					</Col>
+					))}
 							</Row>
 							<Row className='sign-up-page-sign-in-button-parent-container mt-4'>
 								<button
