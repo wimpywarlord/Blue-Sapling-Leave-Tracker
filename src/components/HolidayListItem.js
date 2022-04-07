@@ -49,7 +49,7 @@ const HolidayListItem = (props) => {
 									onMouseLeave={() => setShow(false)}
 									src='https://img.icons8.com/color/18/000000/info--v1.png'
 								/>
-								<Overlay target={target.current} show={show} placement='right'>
+								<Overlay target={target.current} show={show} placement='top'>
 									{(props) => (
 										<Tooltip id={id} {...props}>
 											{remarkOfTheHoliday}
